@@ -1,0 +1,155 @@
+header {
+  position: fixed;
+  top: 2vh;
+  left: 3vw;
+  @include flex;
+  font-size: large;
+}
+
+.container {
+  display: flex;
+  margin-top: 2vh;
+
+  #myTabContent{
+    width: 50vw;
+    margin-left: 2vw;
+
+    .dates {
+      @include flex-center();
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  
+    .location {
+      #countries,
+      #cities {
+        max-height: 40vh;
+        overflow-y: scroll;
+
+      #amenities {
+        select #amenities-select{
+          option[value = '1'] {
+            background-image: '<i class="bi bi-star-fill"></i>';
+            background-color: black
+          }
+        }
+
+      }
+      }
+  
+      #economy_types {
+        @include flex();
+        flex-direction: column;
+      }
+    }
+  
+    .buttons {
+      margin-top: 50px;
+      @include flex-end();
+    }
+  }
+
+  nav {
+    align-items: flex-start;
+    justify-content: center;
+
+    button:focus {
+      box-shadow: 0 0 0 var(--bs-navbar-toggler-focus-width) $primary-color;
+    }
+
+    .search-categories {
+      margin: $spacing;
+    }
+      .nav-item {
+        .active {
+          border-bottom: 1px solid $primary-color;
+        }
+  
+        .active:hover {
+          border-bottom: 1px solid $hover-color;
+        }
+      }
+  
+      .nav-link {
+        color:  $primary-color;
+      }
+      .nav-link:hover {
+        color: $hover-color
+      }
+  }
+}
+
+.content {
+  .history-container {
+    h1 {
+      font-size: larger;
+      margin-bottom: 2vh;
+      font-weight: bolder;
+    }
+
+    .list {
+      width: 50vw;
+      font-size: large;
+
+      .history-item {
+        border: 2px solid $primary-color;
+        border-radius: 10px;
+        margin-bottom: 5px;
+        padding: 5px 10px;
+        @include flex-center();
+        justify-content:space-between;
+      }
+
+      .history-item:hover {
+        border-color: $hover-color;
+        color: $hover-color
+      }
+
+      i {
+        margin-right: 1vw;
+      }
+
+      .btn {
+        margin-left: 1vw;
+      }
+
+      .btn:hover {
+        background-color: $hover-color;
+        border-color: $hover-color;
+      }
+    }
+  }
+  
+  .page-numbers {
+    .btn {
+      color: $primary-color;
+    }
+
+    .active {
+      background-color: $primary-color;
+      color: $text-color;
+    }
+
+    .btn:hover {
+      background-color: $hover-color;
+      border-color: $hover-color;
+      color: $text-color;
+    }
+  }
+
+  .go-back {
+    margin-top: 2vh;
+    width: fit-content;
+    a {
+      border: 2px solid $primary-color;
+      padding: 5px;
+      border-radius: 10px;
+    }
+
+    a:hover {
+        background-color: $hover-color;
+        border-color: $hover-color;
+        color: $text-color;
+    }
+  }
+}
