@@ -70,7 +70,7 @@ const endDateInCars = document.getElementById('carEndDate');
 
 const currentDate = new Date().setHours(3, 0, 0 ,0);
 
-const checkDate = (startDate, endDate, checkStartOrEndDate) => () =>{
+const checkDate = (startDate, endDate, checkStartOrEndDate, endDateToAble) => () =>{
   const start = new Date(startDate.value).getTime();
   let result = startDate.value;
 
@@ -79,15 +79,17 @@ const checkDate = (startDate, endDate, checkStartOrEndDate) => () =>{
   } else if (checkStartOrEndDate === 'end'){
     const end = new Date(endDate.value).getTime();
 
-    result = start <= end ? endDate.value : endDate.value = '' 
+    result = start <= end ? endDate.value : endDate.value = '';
   };
+
+  endDateToAble.disabled = !(checkStartOrEndDate === 'start' && startDate.value);
 
   return result;
 };
 
-startDateInFlights.addEventListener('change', checkDate(startDateInFlights, currentDate, 'start'));
-startDateInHotels.addEventListener('change', checkDate(startDateInHotels, currentDate, 'start'));
-startDateInCars.addEventListener('change', checkDate(startDateInCars, currentDate, 'start'));
+startDateInFlights.addEventListener('change', checkDate(startDateInFlights, currentDate, 'start', endDateInFlights));
+startDateInHotels.addEventListener('change', checkDate(startDateInHotels, currentDate, 'start', endDateInHotels));
+startDateInCars.addEventListener('change', checkDate(startDateInCars, currentDate, 'start', endDateInCars));
 
 endDateInFlights.addEventListener('change', checkDate(startDateInFlights, endDateInFlights, 'end'));
 endDateInHotels.addEventListener('change', checkDate(startDateInHotels, endDateInHotels, 'end'));
@@ -101,8 +103,7 @@ const isFormFilled = () => {
 
     form.addEventListener('change', () => btn.disabled = !form.checkValidity());
 
-    btn.addEventListener('click', event => {
-      event.preventDefault();
+    btn.addEventListener('click', () => {
       getDataFromSubmitForm(form);
     });
   })

@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../styles/reset.css">
   <script src="https://kit.fontawesome.com/a1d9fb4643.js" crossorigin="anonymous"></script>
+  <link href="../styles/reset.css">
   <link href="../styles/index.css">
   <title>Searching project</title>
 </head>
@@ -17,8 +17,9 @@
     </logo>
   </header>
 
-  <div class="container">
-   <nav class="navbar navbar-expand-lg bg">
+
+  <div class="main-content">
+    <nav class="navbar navbar-expand-lg bg">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -56,142 +57,144 @@
             </li>
           </ul>
        </div>
-  </nav>
-
-    <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="flight-tab-pane" role="tabpanel" 
-      aria-labelledby="home-tab">
-        <div class="flight">
-          <form class="row g-3 needs-validation" novalidate>
-            <div class="dates">
-              <div class="col-md-4 position-relative">
-                <label for="validationTooltip01" class="form-label">Start Date</label>
-                <input data-key="Start-date" type="date" class="start form-control" id="flightStartDate" required>
-              </div>
-        
-              <div class="col-md-4 position-relative">
-                <label for="validationTooltip02" class="form-label">End Date</label>
-                <input data-key="End-date" type="date" class="end form-control" id="flightsEndDate" required>
-              </div>
-            </div>
-      
-            <div class="location">
-              <div class="inputFrom">
-                <label for="validationTooltip03" class="form-label">From</label>
-                <input data-key="From" type="text" class="from form-control" id="validationTooltip03" required>
-                <div class="invalid-tooltip">
-                  Please provide a valid city.
+    </nav>
+  
+    <div class="container m0">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="flight-tab-pane" role="tabpanel" 
+        aria-labelledby="home-tab">
+          <div class="flight">
+            <form class="row g-3 needs-validation" novalidate>
+              <div class="dates">
+                <div class="col-md-4 position-relative">
+                  <label for="validationTooltip01" class="form-label">Start Date</label>
+                  <input data-key="Start-date" type="date" class="start form-control" id="flightStartDate" required>
+                </div>
+          
+                <div class="col-md-4 position-relative">
+                  <label for="validationTooltip02" class="form-label">End Date</label>
+                  <input data-key="End-date" type="date" class="end form-control" id="flightsEndDate" required disabled>
                 </div>
               </div>
-
-              <div class="inputTo">
-                <label for="validationTooltip03" class="form-label">To</label>
-                <input data-key="To" type="text" class="to form-control" id="validationTooltip03" required>
-                <div class="invalid-tooltip">
-                  Please provide a valid city.
-                </div>
-              </div>
-            </div>
-      
-            <div class="buttons">
-              <button class="btn btn-light" type="reset">Clear</button>
-              <button id="flights-btn" class="btn btn-primary" type="submit" disabled>Search</button>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="tab-pane fade" id="hotels-tab-pane" role="tabpanel" 
-      aria-labelledby="profile-tab">
-        <div class="hotels">
-          <form class="row g-3 needs-validation" novalidate>
-            <div class="dates">
-              <div class="col-md-4 position-relative">
-                <label for="validationTooltip01" class="form-label">Start Date</label>
-                <input data-key="Start-date" type="date" class="start form-control" id="hotelStartDate" required>
-              </div>
         
-              <div class="col-md-4 position-relative">
-                <label for="validationTooltip02" class="form-label">End Date</label>
-                <input data-key="End-date" type="date" class="end form-control" id="hotelEndDate" required>
-              </div>
-            </div>
-      
-              <div class="amenities">
-                <label for="validationTooltip03" class="form-label">Amenities</label>
-                <select data-key="Amenities" class="form-select" id="amenities-select" required>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </div>
-
-            <div class="location">
-              <div class="countries">
-                <label for="validationTooltip03" class="form-label">Country</label>
-                <select data-key="Country" class="form-select" id="countries" required>
-                  <option selected>Choose the country...</option>
-                </select>
-              </div>
-      
-              <div class="cities">
-                  <label for="validationTooltip03" class="form-label">City</label>
-                  <select data-key="City" class="form-select" id="cities" required>
-                  </select>
-              </div>
-            </div>
-      
-            <div class="buttons">
-              <button class="btn btn-light" type="reset">Clear</button>
-              <button class="btn btn-primary" type="submit" disabled>Search</button>
-            </div>
-          </form>
-          </div>
-      </div>
-
-      <div class="tab-pane fade" id="cars-tab-pane" role="tabpanel" 
-      aria-labelledby="contact-tab">
-        <div class="cars">
-          <form class="row g-3 needs-validation" novalidate>
-            <div class="dates">
-              <div class="col-md-4 position-relative">
-                <label for="validationTooltip01" class="form-label">Start Date</label>
-                <input data-key="Start-date" type="date" class="start form-control" id="carStartDate" required>
-              </div>
-        
-              <div class="col-md-4 position-relative">
-                <label for="validationTooltip02" class="form-label">End Date</label>
-                <input data-key="End-date" data-parent="Cars" type="date" class="end form-control" id="carEndDate" required>
-              </div>
-            </div>
-      
-            <div class="location">
-                <div class="btn-group" id="economy_types">
-                    <label for="validationTooltip03" class="form-label">Type</label>
-                    <select data-key="Type" class="form-select" id="inputGroupSelect01">
-                      <option value="Economy">Economy</option>
-                      <option value="Business">Business</option>
-                      <option value="Grand">Grand</option>
-                    </select>
-                </div>
-
-                <div class="inputLocation">
-                  <label for="validationTooltip03" class="form-label">Location</label>
-                  <input data-key="Location" type="text" class="form-control" id="validationTooltip03" required>
+              <div class="location">
+                <div class="inputFrom">
+                  <label for="validationTooltip03" class="form-label">From</label>
+                  <input data-key="From" type="text" class="from form-control" id="validationTooltip03" required>
                   <div class="invalid-tooltip">
                     Please provide a valid city.
                   </div>
                 </div>
-            </div>
-      
-            <div class="buttons">
-              <button class="btn btn-light" type="reset">Clear</button>
-              <button class="btn btn-primary" type="submit" disabled>Search</button>
-            </div>
-          </form>
+  
+                <div class="inputTo">
+                  <label for="validationTooltip03" class="form-label">To</label>
+                  <input data-key="To" type="text" class="to form-control" id="validationTooltip03" required>
+                  <div class="invalid-tooltip">
+                    Please provide a valid city.
+                  </div>
+                </div>
+              </div>
+        
+              <div class="buttons">
+                <button class="btn btn-light" type="reset">Clear</button>
+                <button id="flights-btn" class="btn btn-primary" type="submit" disabled>Search</button>
+              </div>
+            </form>
           </div>
+        </div>
+  
+        <div class="tab-pane fade" id="hotels-tab-pane" role="tabpanel" 
+        aria-labelledby="profile-tab">
+          <div class="hotels">
+            <form class="row g-3 needs-validation" novalidate>
+              <div class="dates">
+                <div class="col-md-4 position-relative">
+                  <label for="validationTooltip01" class="form-label">Start Date</label>
+                  <input data-key="Start-date" type="date" class="start form-control" id="hotelStartDate" required>
+                </div>
+          
+                <div class="col-md-4 position-relative">
+                  <label for="validationTooltip02" class="form-label">End Date</label>
+                  <input data-key="End-date" type="date" class="end form-control" id="hotelEndDate" required disabled>
+                </div>
+              </div>
+        
+                <div class="amenities">
+                  <label for="validationTooltip03" class="form-label">Amenities</label>
+                  <select data-key="Amenities" class="form-select" id="amenities-select" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+  
+              <div class="location">
+                <div class="countries">
+                  <label for="validationTooltip03" class="form-label">Country</label>
+                  <select data-key="Country" class="form-select" id="countries" required>
+                    <option selected>Choose the country...</option>
+                  </select>
+                </div>
+        
+                <div class="cities">
+                    <label for="validationTooltip03" class="form-label">City</label>
+                    <select data-key="City" class="form-select" id="cities" required>
+                    </select>
+                </div>
+              </div>
+        
+              <div class="buttons">
+                <button class="btn btn-light" type="reset">Clear</button>
+                <button class="btn btn-primary" type="submit" disabled>Search</button>
+              </div>
+            </form>
+            </div>
+        </div>
+  
+        <div class="tab-pane fade" id="cars-tab-pane" role="tabpanel" 
+        aria-labelledby="contact-tab">
+          <div class="cars">
+            <form class="row g-3 needs-validation" novalidate>
+              <div class="dates">
+                <div class="col-md-4 position-relative">
+                  <label for="validationTooltip01" class="form-label">Start Date</label>
+                  <input data-key="Start-date" type="date" class="start form-control" id="carStartDate" required>
+                </div>
+          
+                <div class="col-md-4 position-relative">
+                  <label for="validationTooltip02" class="form-label">End Date</label>
+                  <input data-key="End-date" data-parent="Cars" type="date" class="end form-control" id="carEndDate" required disabled>
+                </div>
+              </div>
+        
+              <div class="location">
+                  <div class="btn-group" id="economy_types">
+                      <label for="validationTooltip03" class="form-label">Type</label>
+                      <select data-key="Type" class="form-select" id="inputGroupSelect01">
+                        <option value="Economy">Economy</option>
+                        <option value="Business">Business</option>
+                        <option value="Grand">Grand</option>
+                      </select>
+                  </div>
+  
+                  <div class="inputLocation">
+                    <label for="validationTooltip03" class="form-label">Location</label>
+                    <input data-key="Location" type="text" class="form-control" id="validationTooltip03" required>
+                    <div class="invalid-tooltip">
+                      Please provide a valid city.
+                    </div>
+                  </div>
+              </div>
+        
+              <div class="buttons">
+                <button class="btn btn-light" type="reset">Clear</button>
+                <button class="btn btn-primary" type="submit" disabled>Search</button>
+              </div>
+            </form>
+            </div>
+        </div>
       </div>
     </div>
   </div>

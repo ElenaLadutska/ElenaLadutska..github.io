@@ -5,7 +5,7 @@ const paginationElement = document.getElementById('pagination');
 const historyContainer = document.getElementById('list');
 
 let currentPage = 1;
-const ROWS = 5;
+const ROWS = 15;
 
 const showHistory = () => {
   const getInfoFromLS = JSON.parse(localStorage.getItem('history'));
@@ -73,23 +73,25 @@ const showHistory = () => {
       };
       
       const removeHistotyItem = document.createElement('button');
-        removeHistotyItem.className = 'btn btn-primary'
-        removeHistotyItem.textContent = 'X';
-  
-        itemElement.appendChild(removeHistotyItem);
-  
-        removeHistotyItem.addEventListener('click', event => {
-          const clickedElementParent = event.target.parentElement;
-          const id = clickedElementParent.id;
-          
-          clickedElementParent.remove();
-          pagination.splice(id, 1);
-            
-          localStorage.setItem('history', JSON.stringify(pagination));
+      removeHistotyItem.className = 'btn remove';
+      const iconTrash = document.createElement('i');
+      iconTrash.className = "fa fa-times";
 
-          displayList(pagination, historyContainer, ROWS, currentPage);
-          setupPagination(pagination, paginationElement, ROWS)
-        });
+      removeHistotyItem.appendChild(iconTrash);
+      itemElement.appendChild(removeHistotyItem);
+  
+      removeHistotyItem.addEventListener('click', event => {
+        const clickedElementParent = event.target.parentElement;
+        const id = clickedElementParent.id;
+          
+        clickedElementParent.remove();
+        pagination.splice(id, 1);
+            
+        localStorage.setItem('history', JSON.stringify(pagination));
+
+        displayList(pagination, historyContainer, ROWS, currentPage);
+        setupPagination(pagination, paginationElement, ROWS)
+      });
     };
   };
   

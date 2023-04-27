@@ -4,9 +4,11 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "../node_modules/bootstrap/scss/functions";
 
+* {
+  margin: 0;
+}
+
 body {
   font-family: $fonts; 
   color: $primary-color;
-  padding: $spacing;
-  @include flex-center(); 
 }

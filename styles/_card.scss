@@ -1,85 +1,92 @@
 header {
-  position: fixed;
-  top: 2vh;
-  left: 3vw;
+  width: 100%;
+  padding-left: $spacing; 
   @include flex;
   font-size: large;
 }
 
-.container {
-  display: flex;
-  margin-top: 2vh;
-
-  #myTabContent{
-    width: 50vw;
-    margin-left: 2vw;
-
-    .dates {
-      @include flex-center();
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-  
-    .location {
-      #countries,
-      #cities {
-        max-height: 40vh;
-        overflow-y: scroll;
-
-      #amenities {
-        select #amenities-select{
-          option[value = '1'] {
-            background-image: '<i class="bi bi-star-fill"></i>';
-            background-color: black
-          }
-        }
-
-      }
-      }
-  
-      #economy_types {
-        @include flex();
-        flex-direction: column;
-      }
-    }
-  
-    .buttons {
-      margin-top: 50px;
-      @include flex-end();
-    }
-  }
+.main-content {
+  @include flex();
+  justify-content: space-evenly;
 
   nav {
     align-items: flex-start;
     justify-content: center;
-
+    width: fit-content;
+  
     button:focus {
       box-shadow: 0 0 0 var(--bs-navbar-toggler-focus-width) $primary-color;
     }
-
-    .search-categories {
-      margin: $spacing;
+  
+    .nav-item {
+      .active {
+        border-bottom: 1px solid $primary-color;
     }
-      .nav-item {
-        .active {
-          border-bottom: 1px solid $primary-color;
-        }
   
-        .active:hover {
-          border-bottom: 1px solid $hover-color;
+      .active:hover {
+        border-bottom: 1px solid $hover-color;
+      }
+    }
+  
+    .nav-link {
+      color:  $primary-color;
+    }
+  
+    .nav-link:hover {
+      color: $hover-color
+    }
+  }
+  
+  .container.m0 {
+    margin: 0;
+  
+    #myTabContent{
+      .dates {
+        @include flex-center();
+        justify-content: space-between;
+        flex-wrap: wrap;
+  
+        .start,
+        .end {
+          cursor: pointer;
         }
       }
+    
+      .location {
+        #countries,
+        #cities {
+          max-height: 40vh;
+          overflow-y: scroll;
   
-      .nav-link {
-        color:  $primary-color;
+        #amenities {
+          select #amenities-select{
+            option[value = '1'] {
+              background-image: '<i class="bi bi-star-fill"></i>';
+              background-color: black
+            }
+          }
+  
+        }
+        }
+    
+        #economy_types {
+          @include flex();
+          flex-direction: column;
+        }
       }
-      .nav-link:hover {
-        color: $hover-color
+    
+      .buttons {
+        margin-top: 50px;
+        @include flex-end();
       }
+    }
   }
 }
 
-.content {
+
+.history-content {
+  margin: 1em;
+
   .history-container {
     h1 {
       font-size: larger;
@@ -88,16 +95,19 @@ header {
     }
 
     .list {
-      width: 50vw;
       font-size: large;
+      @include flex-center();
+      flex-wrap: wrap;
 
       .history-item {
         border: 2px solid $primary-color;
         border-radius: 10px;
-        margin-bottom: 5px;
+        margin: 1em;
         padding: 5px 10px;
         @include flex-center();
-        justify-content:space-between;
+        flex-wrap: wrap;
+        flex-direction: column;
+        cursor: pointer;
       }
 
       .history-item:hover {
@@ -105,12 +115,13 @@ header {
         color: $hover-color
       }
 
-      i {
-        margin-right: 1vw;
-      }
-
-      .btn {
-        margin-left: 1vw;
+      .remove.btn {
+        width: 1.5em;
+        height: 1.5em;
+        background-color: $primary-color;
+        color: $text-color;
+        margin-top: 1em;
+        @include flex-center();
       }
 
       .btn:hover {
